@@ -16,6 +16,7 @@ pub mod pallet {
 			ArithmeticError, DispatchError
 		}
 	};
+	use sp_std::vec::Vec;
 
 	pub type WorkflowId = u32;
 	pub type WorkflowStepId = u8;

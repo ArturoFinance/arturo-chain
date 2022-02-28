@@ -1,11 +1,10 @@
 [package]
-authors = ['Substrate DevHub <https://github.com/substrate-developer-hub>']
+authors = ['Arturo Finance']
 edition = '2018'
-homepage = 'https://substrate.dev'
 license = 'Unlicense'
-name = 'frontier-template-runtime'
+name = 'arturo-runtime'
 publish = false
-repository = 'https://github.com/substrate-developer-hub/frontier-node-template/'
+repository = 'https://github.com/ArturoFinance/arturo-chain.git'
 version = '0.0.1'
 
 [package.metadata.docs.rs]

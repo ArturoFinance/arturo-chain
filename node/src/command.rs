@@ -20,7 +20,7 @@ use crate::{
 	cli::{Cli, Subcommand},
 	service::{self, frontier_database_dir},
 };
-use frontier_template_runtime::Block;
+use arturo_runtime::Block;
 use sc_cli::{ChainSpec, RuntimeVersion, SubstrateCli};
 use sc_service::PartialComponents;
 
@@ -61,7 +61,7 @@ impl SubstrateCli for Cli {
 	}
 
 	fn native_runtime_version(_: &Box<dyn ChainSpec>) -> &'static RuntimeVersion {
-		&frontier_template_runtime::VERSION
+		&arturo_runtime::VERSION
 	}
 }
 

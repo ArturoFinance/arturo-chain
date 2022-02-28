@@ -8,7 +8,7 @@ use fc_consensus::FrontierBlockImport;
 use fc_mapping_sync::{MappingSyncWorker, SyncStrategy};
 use fc_rpc::EthTask;
 use fc_rpc_core::types::FilterPool;
-use frontier_template_runtime::{self, opaque::Block, RuntimeApi, SLOT_DURATION};
+use arturo_runtime::{self, opaque::Block, RuntimeApi, SLOT_DURATION};
 use futures::StreamExt;
 use sc_cli::SubstrateCli;
 use sc_client_api::{BlockchainEvents, ExecutorProvider};
@@ -39,11 +39,11 @@ impl sc_executor::NativeExecutionDispatch for ExecutorDispatch {
 	type ExtendHostFunctions = frame_benchmarking::benchmarking::HostFunctions;
 
 	fn dispatch(method: &str, data: &[u8]) -> Option<Vec<u8>> {
-		frontier_template_runtime::api::dispatch(method, data)
+		arturo_runtime::api::dispatch(method, data)
 	}
 
 	fn native_version() -> sc_executor::NativeVersion {
-		frontier_template_runtime::native_version()
+		arturo_runtime::native_version()
 	}
 }
 

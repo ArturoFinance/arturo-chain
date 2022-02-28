@@ -1,13 +1,12 @@
 [package]
-authors = ['Substrate DevHub <https://github.com/substrate-developer-hub>']
+authors = ['Arturo Finance']
 build = 'build.rs'
-description = 'A fresh FRAME-based Substrate node, ready for hacking.'
+description = 'Node for Arturo Chain'
 edition = '2018'
-homepage = 'https://substrate.dev'
 license = 'Unlicense'
-name = 'frontier-template-node'
+name = 'arturo-node'
 publish = false
-repository = 'https://github.com/substrate-developer-hub/frontier-node-template/'
+repository = 'https://github.com/ArturoFinance/arturo-chain.git'
 version = '0.0.1'
 
 [package.metadata.docs.rs]
@@ -49,7 +48,7 @@ git = 'https://github.com/paritytech/substrate'
 [dependencies.frame-benchmarking-cli]
 git = 'https://github.com/paritytech/substrate'
 
-[dependencies.frontier-template-runtime]
+[dependencies.arturo-runtime]
 default-features = false
 features = ['std']
 path = '../runtime'
@@ -154,7 +153,7 @@ git = 'https://github.com/paritytech/substrate'
 git = 'https://github.com/paritytech/substrate'
 
 [features]
-aura = ['frontier-template-runtime/aura']
+aura = ['arturo-runtime/aura']
 default = ['aura']
-manual-seal = ['frontier-template-runtime/manual-seal']
-runtime-benchmarks = ['frontier-template-runtime/runtime-benchmarks']
+manual-seal = ['arturo-runtime/manual-seal']
+runtime-benchmarks = ['arturo-runtime/runtime-benchmarks']

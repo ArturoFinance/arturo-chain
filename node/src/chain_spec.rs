@@ -1,4 +1,4 @@
-use frontier_template_runtime::{
+use arturo_runtime::{
 	opaque::SessionKeys, AccountId, AuraConfig, BalancesConfig, EVMConfig, EthereumConfig,
 	GenesisConfig, GrandpaConfig, SessionConfig, Signature, SudoConfig, SystemConfig,
 	ValidatorSetConfig, WASM_BINARY,

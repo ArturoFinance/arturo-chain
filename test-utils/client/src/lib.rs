@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-pub use frontier_template_runtime as runtime;
+pub use arturo_runtime as runtime;
 use sp_runtime::traits::HashFor;
 pub use substrate_test_client::*;
 

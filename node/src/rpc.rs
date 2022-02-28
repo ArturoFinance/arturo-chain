@@ -6,7 +6,7 @@ use fc_rpc::{
 	EthBlockDataCache, OverrideHandle, RuntimeApiStorageOverride, SchemaV1Override, StorageOverride,
 };
 use fc_rpc_core::types::FilterPool;
-use frontier_template_runtime::{opaque::Block, AccountId, Balance, Hash, Index};
+use arturo_runtime::{opaque::Block, AccountId, Balance, Hash, Index};
 use jsonrpc_pubsub::manager::SubscriptionManager;
 use pallet_ethereum::EthereumStorageSchema;
 use sc_client_api::{
@@ -125,7 +125,7 @@ where
 		client.clone(),
 		pool.clone(),
 		graph,
-		frontier_template_runtime::TransactionConverter,
+		arturo_runtime::TransactionConverter,
 		network.clone(),
 		signers,
 		overrides.clone(),

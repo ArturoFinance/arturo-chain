@@ -4450,7 +4450,7 @@ dependencies = [
 
 [[package]]
 name = "pallet-workflow-engine"
-version = "3.0.0-monthly-2021-10"
+version = "0.0.1"
 dependencies = [
  "frame-benchmarking",
  "frame-support",

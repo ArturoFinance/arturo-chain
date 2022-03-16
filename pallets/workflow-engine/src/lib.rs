@@ -216,6 +216,9 @@ pub mod pallet {
 	}
 
 	impl<T: Config> Pallet<T> {
+
+		// Workflow creation phase
+		
 		fn generate_workflow_id() -> Result<WorkflowId, DispatchError> {
 			WorkflowIds::<T>::try_mutate(|next_id| -> Result<WorkflowId, DispatchError> {
 				let current_id = *next_id;
@@ -225,7 +228,6 @@ pub mod pallet {
 		}
 
 		fn identify_workflow_steps(workflow_step_inputs: Vec<WorkflowStepInput>) -> Result<Vec<WorkflowStep>, DispatchError> {
-
 			let mut steps: Vec<WorkflowStep> = Vec::new();
 
 			for (pos, s) in workflow_step_inputs.iter().enumerate() {
@@ -240,12 +242,22 @@ pub mod pallet {
 			Ok(steps)
 		}
 
-		fn execute_action(action: &Action){
-			match action {
-				Action::MakeTransfer => log::info!("🟢 Action to execute is to invest"),
-				_ => {}
-			}
+
+		// Workflow Scanning Phase (Handled by the Orchestrator)
+		
+		///Compute and gives a list of potential workflows that need to be run.
+		fn retrieve_canditates_workflows(){
+			//TODO
 		}
+
+		/// retrieve workflows from the candidates workflows list that have passed 
+		/// the Buffer test (meaning the Buffer returned true) and the input of Oracles Result
+		fn retrieve_ready_workflows(){
+			//TODO
+		}
+
+
+		// Workflow Execution Phase (Handled by Executor)
 	}
 
 	#[pallet::hooks]

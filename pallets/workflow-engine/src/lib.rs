@@ -8,11 +8,9 @@ pub mod pallet {
 	use frame_system::pallet_prelude::*;
 	use scale_info::TypeInfo;
 
-	use frame_system::{AccountInfo};
 	use frame_support::{ 
-		traits::{Currency, ExistenceRequirement::KeepAlive, Get},
+		traits::{Currency, Get},
 		sp_runtime::{
-			//traits::{ CheckedAdd},
 			ArithmeticError, DispatchError
 		}
 	};
@@ -172,24 +170,6 @@ pub mod pallet {
 			Ok(())
 		}
 
-		#[pallet::weight(10_000)]
-		pub fn make_payment(
-			origin: OriginFor<T>,
-			from: T::AccountId,
-			to: T::AccountId,
-			amount: BalanceOf<T>,
-			ops: u8
-		) -> DispatchResult {
-			let who = ensure_signed(origin)?;
-
-			T::Currency::transfer(&from, &to, amount, KeepAlive)?;
-
-			<PaymentCheck<T>>::put(ops);
-
-			Self::deposit_event(Event::TransferEffective(from, to, amount));
-
-			Ok(())
-		}
 
 		#[pallet::weight(10_000 + T::DbWeight::get().writes(1))]
 		pub fn pause_workflow(
@@ -238,13 +218,6 @@ pub mod pallet {
 				steps.push(step)
 			}
 			Ok(steps)
-		}
-
-		fn execute_action(action: &Action){
-			match action {
-				Action::MakeTransfer => log::info!("🟢 Action to execute is to invest"),
-				_ => {}
-			}
 		}
 	}
 
